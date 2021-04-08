@@ -22,6 +22,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use(function(request, response, next){
     app.locals.isLogin = true;
+    app.locals.req_path = request.path;
     next();
 });
 
