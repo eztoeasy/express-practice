@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const logger = require('morgan');
 
 const admin = require('./routes/admin');
 
@@ -11,8 +12,11 @@ nunjucks.configure('template', {
     express : app
 });
 
+// 미들웨어 셋팅
+app.use(logger('dev'));
+
 app.get('/', function(request, response){
-    response.send('Hello Express!!!');
+    response.send('express start');
 });
 
 app.use('/admin', admin);
