@@ -6,7 +6,11 @@ router.get('/', function(request, response){
 });
 
 router.get('/products', function(request, response){
-    response.send('admin products');
+    // response.send('admin products');
+    response.render('admin/products.html', {
+        message : 'hello!!',
+        online : '~~~~@@'
+    });
 });
 
 module.exports = router;
