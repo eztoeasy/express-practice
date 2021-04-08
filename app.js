@@ -31,6 +31,15 @@ app.get('/', function(request, response){
 
 app.use('/admin', admin);
 
+app.use(function(request, response, _){
+    response.status(400).render('common/404.html');
+});
+
+app.use(function(request, response, _){
+    response.status(500).render('common/500.html');
+});
+
+
 app.listen(port, function(){
     console.log('Express listening on port', port);
 });

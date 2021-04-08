@@ -15,7 +15,7 @@ router.get('/', testMiddleWare, testMiddleWare2, function(request, response){
     response.send('admin 이후 url');
 });
 
-router.get('/products', function(request, response){
+router.get('/products', function(_, response){
     response.render('admin/products.html', {
         message : '<h1>태그가 출력됩니다.</h1>',
         online : '~~~~@@'
