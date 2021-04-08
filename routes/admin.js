@@ -22,4 +22,12 @@ router.get('/products', function(request, response){
     });
 });
 
+router.get('/products/write', function(request, response){
+    response.render('admin/write.html');
+});
+
+router.post('/products/write', function (request, response){
+    response.send(request.body);
+});
+
 module.exports = router;
